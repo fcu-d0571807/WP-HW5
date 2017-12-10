@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            #map {
+                height: 700px;
+                width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>My Google Maps Demo</h3>
+    <div id="map"></div>
+        <script>
+            function initMap(){
+                var center = {lat: 24.186403, lng: 120.635776};
+                var map = new
+                google.maps.Map(document.getElementById('map'), {
+                    zoom: 14,
+                    center: center
+                });
+                var features = [
+                    {
+                        position: new google.maps.LatLng(24.178184, 120.647008),
+                        type:'post',
+                        address:'<div>'+'<h3>中華郵政股份有限公司(台中逢甲郵局)</h3>'+'<p>台中市西屯區文華路100號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.176729, 120.637686),
+                        type:'post',
+                        address:'<div>'+'<h3>中華郵政股份有限公司(台中西屯郵局)</h3>'+'<p>台中市西屯區黎明路三段130號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.175292, 120.649134),
+                        type:'post',
+                        address:'<div>'+'<h3>中華郵政股份有限公司(台中逢甲郵局)</h3>'+'<p>台中市西屯區河南路二段268號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.169957, 120.606476),
+                        type:'post',
+                        address:'<div>'+'<h3>中華郵政股份有限公司(台中工業區郵局)</h3>'+'<p>台中市西屯區工業六路10號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.164704, 120.654155),
+                        type:'post',
+                        address:'<div>'+'<h3>中華郵政股份有限公司(台中何厝郵局)</h3>'+'<p>台中市西屯區青海路一段83號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.183788, 120.603728),
+                        type:'post',
+                        address:'<div>'+'<h3>中華郵政股份有限公司(台中榮總郵局)</h3>'+'<p>台中市西屯區臺灣大道四段1650號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.172530, 120.632130),
+                        type:'post',
+                        address:'<div>'+'<h3>中華郵政股份有限公司(郵政顧客服務中心)</h3>'+'<p>台中市西屯區台中港路三段199號3樓</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.189404, 120.615405),
+                        type:'post',
+                        address:'<div>'+'<h3>中華郵政股份有限公司(台中永安郵局)</h3>'+'<p>台中市西屯區西屯路三段166號之80</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.183517, 120.618591),
+                        type:'post',
+                        address:'<div>'+'<h3>臺灣郵政股份有限公司(台中福安郵局)</h3>'+'<p>台中市西屯區福順路318號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.189424, 120.615437),
+                        type:'post',
+                        address:'<div>'+'<h3>臺灣郵政股份有限公司(台中航發中心郵局)</h3>'+'<p>台中市西屯區西屯路三段166號之80</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.190622, 120.612358),
+                        type:'post',
+                        address:'<div>'+'<h3>郵局</h3>'+'<p>台中市西屯區永安里西屯路三段166之80號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.182465, 120.602707),
+                        type:'post',
+                        address:'<div>'+'<h3>中華郵政股份有限公司(東海大學郵局)</h3>'+'<p>台中市西屯區臺灣大道四段1727號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.166019, 120.618580),
+                        type:'gas',
+                        address:'<div>'+'<h3>中港加油站實業有限公司</h3>'+'<p>臺中市西屯區安和路49之5號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.166201, 120.618963),
+                        type:'gas',
+                        address:'<div>'+'<h3>安和加油站股份有限公司</h3>'+'<p>臺中市西屯區協和里安和路51之8號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.182946, 120.601340),
+                        type:'gas',
+                        address:'<div>'+'<h3>東大加油站有限公司</h3>'+'<p>臺中市西屯區臺灣大道四段1832號1樓</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.179283, 120.634380),
+                        type:'gas',
+                        address:'<div>'+'<h3>環中路加油站股份有限公司</h3>'+'<p>臺中市西屯區西墩里環中路二段1286號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.180139, 120.632503),
+                        type:'gas',
+                        address:'<div>'+'<h3>光凰加油站有限公司</h3>'+'<p>臺中市西屯區西墩里福科路110號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.171509, 120.659835),
+                        type:'gas',
+                        address:'<div>'+'<h3>文華加油站股份有限公司</h3>'+'<p>臺中市西屯區文心路3段187號1樓</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.162845, 120.628394),
+                        type:'gas',
+                        address:'<div>'+'<h3>安祥加油站股份有限公司</h3>'+'<p>臺中市西屯區龍潭里環中路三段800號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.205167, 120.629106),
+                        type:'gas',
+                        address:'<div>'+'<h3>新豐加油站股份有限公司</h3>'+'<p>臺中市西屯區福雅路693號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.172232, 120.660426),
+                        type:'gas',
+                        address:'<div>'+'<h3>全日加油站有限公司</h3>'+'<p>臺中市西屯區大河里長安路1段226號四樓</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.198417, 120.642590),
+                        type:'gas',
+                        address:'<div>'+'<h3>光明路加油站股份有限公司</h3>'+'<p>臺中市西屯區廣福里廣福路191號1樓</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.173874, 120.659997),
+                        type:'gas',
+                        address:'<div>'+'<h3>台亞石油股份有限公司(大鵬加油站)</h3>'+'<p>台中市西屯區河南路二段35號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.208206, 120.651029),
+                        type:'gas',
+                        address:'<div>'+'<h3>員村加油站股份有限公司員村中清路加油站</h3>'+'<p>台中市西屯區中清路三段1號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.207993, 120.651227),
+                        type:'gas',
+                        address:'<div>'+'<h3>全國加油站股份有限公司(大雅站)</h3>'+'<p>台中市西屯區中清路三段457號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.184451, 120.590376),
+                        type:'gas',
+                        address:'<div>'+'<h3>大度山加油站有限公司</h3>'+'<p>台中市西屯區臺灣大道五段142號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.182418, 120.633862),
+                        type:'gas',
+                        address:'<div>'+'<h3>逢甲加油站有限公司</h3>'+'<p>台中市西屯區西屯路三段77號之3</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.198407, 120.642590),
+                        type:'gas',
+                        address:'<div>'+'<h3>光明路加油站股份有限公司</h3>'+'<p>台中市西屯區廣福路191號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.182946, 120.601329),
+                        type:'gas',
+                        address:'<div>'+'<h3>東大加油站有限公司</h3>'+'<p>台中市西屯區臺灣大道四段1832號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.195184, 120.644267),
+                        type:'gas',
+                        address:'<div>'+'<h3>統一精工股份有限公司</h3>'+'<p>台中市西屯區環中路二段698號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.179283, 120.634359),
+                        type:'gas',
+                        address:'<div>'+'<h3>環中路加油站股份有限公司</h3>'+'<p>台中市西屯區環中路二段1286號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.172162, 120.645412),
+                        type:'gas',
+                        address:'<div>'+'<h3>漢村股份有限公司河南路加油站</h3>'+'<p>台中市西屯區河南路二段341號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.201239, 120.609982),
+                        type:'gas',
+                        address:'<div>'+'<h3>北基國際股份有限公司(中科加油站)</h3>'+'<p>台中市西屯區東大路一段1220號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.171518, 120.659835),
+                        type:'gas',
+                        address:'<div>'+'<h3>文華加油站股份有限公司 </h3>'+'<p>台中市西屯區文心路三段187號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.162855, 120.628394),
+                        type:'gas',
+                        address:'<div>'+'<h3>安祥加油站股份有限公司</h3>'+'<p>台中市西屯區環中路三段800號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.165987, 120.618959),
+                        type:'gas',
+                        address:'<div>'+'<h3>安和加油站股份有限公司</h3>'+'<p>台中市西屯區安和路51號之8</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.171353, 120.643930),
+                        type:'gas',
+                        address:'<div>'+'<h3>台灣中油股份有限公司(油品行銷事業部青海站)</h3>'+'<p>台中市西屯區青海路二段211號2樓</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.163510, 120.650434),
+                        type:'gas',
+                        address:'<div>'+'<h3>台灣中油股份有限公司(油品行銷事業部文心路站)</h3>'+'<p>台中市西屯區文心路三段2號2樓</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.192642, 120.623166),
+                        type:'gas',
+                        address:'<div>'+'<h3>協巨企業有限公司</h3>'+'<p>台中市西屯區福雅路300號1樓</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.187444, 120.618388),
+                        type:'gas',
+                        address:'<div>'+'<h3>北基國際股份有限公司(世貿加油站)</h3>'+'<p>台中市西屯區福康路199號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.182389, 120.633862),
+                        type:'gas',
+                        address:'<div>'+'<h3>全國加油站股份有限公司(西屯站)</h3>'+'<p>台中市西屯區西屯路三段77號之3</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.198417, 120.642579),
+                        type:'gas',
+                        address:'<div>'+'<h3>光明路加油站股份有限公司</h3>'+'<p>台中市西屯區廣福路191號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.173957, 120.675103),
+                        type:'gas',
+                        address:'<div>'+'<h3>台灣中油股份有限公司(油品行銷事業部台中營業處)</h3>'+'<p>台中市西屯區文心路四段121號</p>'+'</div>'
+                    },{
+                        position: new google.maps.LatLng(24.183111, 120.614593),
+                        type:'gas',
+                        address:'<div>'+'<h3>台灣中油股份有限公司(油品行銷事業部台中工業區站)</h3>'+'<p>台中市西屯區臺灣大道四段1047號</p>'+'</div>'
+                    }
+                ]
+
+                var Post = {
+                        url: "Post.png",
+                        scaledSize: new google.maps.Size(50, 50),
+                        origin: new google.maps.Point(0,0),
+                        anchor: new google.maps.Point(25,50)
+                };
+                var Gas = {
+                        url: "Gas.png",
+                        scaledSize: new google.maps.Size(50,50),
+                        origin: new google.maps.Point(0,0),
+                        anchor: new google.maps.Point(25,50)
+                };
+
+                features.forEach(function(feature){
+                    if(feature.type=='post'){
+                        var marker = new google.maps.Marker({
+                            position: feature.position,
+                            map: map,
+                            icon: Post
+                        });
+                    }else {
+                        var marker = new google.maps.Marker({
+                            position: feature.position,
+                            map: map,
+                            icon: Gas
+                        });
+                    }
+                    var infowindow = new google.maps.InfoWindow({
+                        content: feature.address
+                    });
+                    marker.addListener('mouseover',function(feature){
+                        infowindow.open(map,marker);
+                    });
+                    marker.addListener('mouseout',function(feature){
+                        infowindow.close();
+                    });
+                });
+            }
+        </script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBlIbZ9kZTs24JvzidjtPhzjII9PJixhNM&callback=initMap" type="text/javascript"></script>
+    </body>
+</html>
